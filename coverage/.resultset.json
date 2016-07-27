@@ -1,0 +1,76 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/benstein/Documents/Git/peergear/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/benstein/Documents/Git/peergear/app/helpers/pages_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/benstein/Documents/Git/peergear/app/helpers/rooms_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/benstein/Documents/Git/peergear/app/controllers/rooms_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/benstein/Documents/Git/peergear/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/benstein/Documents/Git/peergear/app/controllers/pages_controller.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/benstein/Documents/Git/peergear/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/benstein/Documents/Git/peergear/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/benstein/Documents/Git/peergear/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/benstein/Documents/Git/peergear/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/benstein/Documents/Git/peergear/app/models/application_record.rb": [
+        0,
+        0,
+        0
+      ],
+      "/Users/benstein/Documents/Git/peergear/app/models/user.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1469626781
+  }
+}
