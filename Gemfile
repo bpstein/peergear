@@ -15,12 +15,15 @@ gem 'devise'
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'factory_girl_rails'
+  gem 'ffaker'
 end
 
 group :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'coveralls', require: false
+
 end
 
 group :development do
