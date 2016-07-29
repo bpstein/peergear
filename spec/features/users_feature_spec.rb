@@ -27,5 +27,10 @@ feature "User can sign in and sign out" do
     it "should display 'log out' link" do 
       expect(page).to have_link('Log Out')
     end
+
+    it "should display the user's name and avatar on login" do 
+      expect(page.find('#navbar')).to have_content("John Smith")
+      expect(page.find('#navbar')).to have_css('img.avatar-small')
+    end
   end
 end
