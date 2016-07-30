@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'database_cleaner'
 
 # feature 'rooms' do
 #   context 'no rooms have been added' do

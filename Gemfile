@@ -14,6 +14,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'toastr-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -26,7 +27,9 @@ group :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'coveralls', require: false
-
+  gem 'selenium-webdriver'
+  gem 'chromedriver-helper'
+  gem 'database_cleaner', git: 'git@github.com:DatabaseCleaner/database_cleaner.git'
 end
 
 group :development do
