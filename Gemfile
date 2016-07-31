@@ -30,7 +30,7 @@ group :test do
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
   gem 'shoulda-matchers', '~> 3.1'
-  gem 'database_cleaner', git: 'git@github.com:DatabaseCleaner/database_cleaner.git'
+  gem 'database_cleaner'
 end
 
 group :development do
