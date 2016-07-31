@@ -29,6 +29,7 @@ group :test do
   gem 'coveralls', require: false
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
+  gem 'shoulda-matchers', '~> 3.1'
   gem 'database_cleaner', git: 'git@github.com:DatabaseCleaner/database_cleaner.git'
 end
 
