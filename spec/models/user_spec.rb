@@ -1,5 +1,12 @@
+require 'spec_helper'
+require 'rails_helper'
+
 describe User do
-  let(:facebook_user) { FactoryGirl.create :user}
+  before :each do
+    @user = FactoryGirl.build(:user)
+  end
+  # let(:facebook_user) { FactoryGirl.create :user}
+  let(:user) { FactoryGirl.create :user}
 
   it { should have_many(:rooms) }
   it { should validate_presence_of(:fullname) }

@@ -1,3 +1,6 @@
+require 'spec_helper'
+require 'rails_helper'
+
 describe Room do
   let(:room) { FactoryGirl.create :room}
   let(:user) { FactoryGirl.create :user}

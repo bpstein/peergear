@@ -15,6 +15,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'toastr-rails'
+gem 'paperclip', '~> 4.2'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -31,6 +32,9 @@ group :test do
   gem 'chromedriver-helper'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'database_cleaner'
+  gem 'warden-rspec-rails'
+  gem 'rails-controller-testing'
+  gem 'launchy'
 end
 
 group :development do

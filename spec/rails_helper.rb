@@ -8,6 +8,7 @@ Coveralls.wear!('rails')
 require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rails'
+require 'devise'
 require_relative 'web_helper'
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -59,6 +60,7 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
+  config.include Devise::Test::ControllerHelpers, type: :controller
   config.include(Shoulda::Matchers::ActiveModel, type: :model)
   config.include(Shoulda::Matchers::ActiveRecord, type: :model)
 

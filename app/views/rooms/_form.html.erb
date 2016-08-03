@@ -7,31 +7,31 @@
       
       <%= form_for @room, :html => { multipart: true } do |f| %>
 
-        <div class="row">
+        <div class="row" id="room-block-1">
           <div class="col-md-4 select">
             <div class="form-group">
-              <label>Home Type</label>
-              <%= f.select :home_type, [["Apartment","Apartment"], ["House","House"], ["Bed & Breakfast","Bed & Breakfast"]], id: "home_type", prompt: "Select...", class: "form-control" %>
+              <label id="home_type">Home Type</label>
+              <%= f.select :home_type, [["Apartment","Apartment"], ["House","House"], ["Bed & Breakfast","Bed & Breakfast"]], name: "home_type", prompt: "Select Home Type", class: "form-control" %>
             </div>
           </div>
 
           <div class="col-md-4 select">
             <div class="form-group">
-              <label>Room Type</label>
+              <label id="room_type">Room Type</label>
               <%= f.select :room_type, [["Entire","Entire"], ["Private","Private"], ["Shared","Shared"]],prompt: "Select...", class: "form-control" %>
             </div>
           </div>
 
           <div class="col-md-4 select">
             <div class="form-group">
-              <label>Accommodate</label>
+              <label id="accommodates">Accommodate</label>
               <%= f.select :accommodate, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["6+",6]], prompt: "Select...", class: "form-control" %>
             </div>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-md-4 select">
+          <div class="col-md-4 select" id="select-bedroom">
             <div class="form-group">
               <label>Bedrooms</label>
               <%= f.select :bed_room, [["1",1], ["2",2], ["3",3], ["4+",4]], prompt: "Select...", class: "form-control" %>
@@ -39,7 +39,7 @@
           </div>
 
           <div class="col-md-4 select">
-            <div class="form-group">
+            <div class="form-group" id="select-bathroom">
               <label>Bathrooms</label>
               <%= f.select :bath_room, [["1",1], ["2",2], ["3",3], ["4+",4]], prompt: "Select...", class: "form-control" %>
             </div>
@@ -47,44 +47,44 @@
         </div>
 
         <div class="row">
-          <div class="form-group">
-            <label>Listing name</label>
+          <div class="form-group" id="listing-name">
+            <label>Listing Name</label>
             <%= f.text_field :listing_name, placeholder: "Be clear and descriptive", class: "form-control" %>
           </div>
         </div>
 
         <div class="row">
-          <div class="form-group">
+          <div class="form-group" id="summary">
             <label>Summary</label>
-            <%= f.text_area :summary, rows: 5, placeholder: "Tell about your house", class: "form-control" %>
+            <%= f.text_area :summary, rows: 5, placeholder: "Tell us a little about your place", class: "form-control" %>
           </div>
         </div>
 
         <div class="row">
-          <div class="form-group">
+          <div class="form-group" id="address">
             <label>Address</label>
-            <%= f.text_field :address, placeholder: "What is your address?", class: "form-control" %>
+            <%= f.text_field :address, placeholder: "What's your address?", class: "form-control" %>
           </div>
         </div>
 
         <div class="row">
           <div class="col-md-4">
-            <div class="form-group">
+            <div class="form-group" id="is-tv" name="TV">
               <%= f.check_box :is_tv %> TV
             </div>
-            <div class="form-group">
+            <div class="form-group" id="is-kitchen">
               <%= f.check_box :is_kitchen %> Kitchen
             </div>
-            <div class="form-group">
+            <div class="form-group" id="is-internet">
               <%= f.check_box :is_internet %> Internet
             </div>
           </div>
 
           <div class="col-md-4">
-            <div class="form-group">
+            <div class="form-group" id="is-heating">
               <%= f.check_box :is_heating %> Heating
             </div>
-            <div class="form-group">
+            <div class="form-group" id="is-air">
               <%= f.check_box :is_air %> Air Conditioning
             </div>
           </div>  
@@ -94,7 +94,7 @@
           <div class="col-md-4">
             <div class="form-group">
               <label>Nightly Price</label>
-              <div class="input-group">
+              <div class="input-group" id="price">
                 <div class="input-group-addon">$</div>
                 <%= f.text_field :price, placeholder: "eg. $100", class: "form-control" %>
               </div>  
@@ -105,7 +105,7 @@
         <div class="row">
           <div class="col-md-4">
             <div class="form-group">              
-              <span class="btn btn-default btn-file">
+              <span class="btn btn-default btn-file" id="image-upload">
                   <i class="fa fa-cloud-upload fa-lg"></i> Upload Photos 
                   <%= file_field_tag "images[]", type: :file, multiple: true %>
               </span>
@@ -113,8 +113,10 @@
           </div>
         </div>
 
+        <div id="photos"><%= render 'photos/list' %></div>
+
         <div class="row">
-          <div class="form-group">
+          <div class="form-group" id="is-active">
             <%= f.check_box :active %> Active
           </div>
         </div>
