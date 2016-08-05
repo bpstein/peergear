@@ -16,6 +16,7 @@ feature 'Creating new rooms' do
     it 'should display a new room once a new room is submitted' do
       add_room
       expect(current_path).to eq('/rooms')
+      expect(page).to have_css("img[src*='Tokyo.jpg']")
     end
   end
 
