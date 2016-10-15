@@ -16,6 +16,8 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+require 'coveralls'
+Coveralls.wear!('rails')
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
@@ -103,8 +105,8 @@ RSpec.configure do |config|
   end
 
   config.around(:each) do |example|
-   DatabaseCleaner.cleaning do
-    example.run
-   end
+    DatabaseCleaner.cleaning do
+      example.run
+    end
   end
 end

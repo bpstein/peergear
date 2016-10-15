@@ -4,18 +4,35 @@ gem 'rails', '>= 5.0.0.rc1', '< 5.1'
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production
 gem 'puma', '~> 3.0'
+gem 'figaro'
+
 gem 'bootstrap-sass', '~> 3.3.5'
-gem 'sass-rails', '>= 3.2'
+gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'turbolinks', '~> 5.x'
-gem 'jbuilder', '~> 2.0'
+gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-linkedin'
 gem 'toastr-rails'
-gem 'paperclip', '~> 4.2'
+gem 'paperclip'
+gem 'geocoder'
+gem 'toastr-rails'
+gem 'responders',          github: 'plataformatec/responders'
+gem 'inherited_resources', github: 'josevalim/inherited_resources'
+gem 'ransack',             github: 'ernie/ransack'
+gem 'omniauth'
+gem 'sendgrid-rails', '~> 2.0', '>= 2.0.5' 
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'rubyzip',  '~> 0.9.9'
+gem 'jquery-slick-rails'
+gem 'aws-sdk'
+gem 's3_direct_upload'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -25,9 +42,14 @@ group :development, :test do
 end
 
 group :test do
-  gem 'rspec-rails'
+  gem 'byebug', platform: :mri
+  gem 'factory_girl_rails'
+  gem 'ffaker'
+  gem 'sqlite3'
   gem 'capybara'
   gem 'coveralls', require: false
+  gem 'poltergeist'
+  gem 'selenium-phantomjs'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
   gem 'shoulda-matchers', '~> 3.1'
@@ -35,6 +57,13 @@ group :test do
   gem 'warden-rspec-rails'
   gem 'rails-controller-testing'
   gem 'launchy'
+  gem 'dotenv-rails'
+  gem 'stripe-ruby-mock'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'coveralls', require: false
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
 end
 
 group :development do

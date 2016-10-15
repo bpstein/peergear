@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory :room do 
+    id 1
     home_type "apartment"
     room_type "private"
     accommodate "3"
@@ -8,6 +9,6 @@ FactoryGirl.define do
     listing_name "Nice Penthouse"
     summary "Come stay at my place"
     address "123 Example Street"
-    price "400"
+    price 400
   end
 end

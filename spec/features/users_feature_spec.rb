@@ -25,27 +25,14 @@ feature "User can sign in and sign out" do
     end
 
     it "should not display 'sign up' or log in' links" do 
-      DatabaseCleaner.clean
-      visit('/')
-      click_link('Sign Up')
-      fill_in('Full Name', with: 'John Smith')
-      fill_in('Email', with: 'user@test.com')
-      fill_in('Password', with: 'Password1')
-      fill_in('Confirm Password', with: 'Password1')
-      click_button('Sign up') 
+      sign_up
       expect(page.find('#navbar')).not_to have_link('Sign Up')
       expect(page.find('#navbar')).not_to have_link('Log In')
     end
     
     it "should display 'log out' link" do 
       DatabaseCleaner.clean
-      visit('/')
-      click_link('Sign Up')
-      fill_in('Full Name', with: 'John Smith')
-      fill_in('Email', with: 'user@example8.com')
-      fill_in('Password', with: 'Password1')
-      fill_in('Confirm Password', with: 'Password1')
-      click_button('Sign up')
+      sign_up
       expect(page.find('#navbar')).to have_link('Log Out')
     end
 

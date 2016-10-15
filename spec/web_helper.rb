@@ -1,9 +1,10 @@
 require 'database_cleaner'
 
 def sign_up
+  visit('/')
   click_link('Sign Up')
   fill_in('Full Name', with: 'John Smith')
-  fill_in('Email', with: 'user@example7.com')
+  fill_in('Email', with: 'user@test.com')
   fill_in('Password', with: 'Password1')
   fill_in('Confirm Password', with: 'Password1')
   click_button('Sign up') 
@@ -37,7 +38,6 @@ def add_room
   fill_in('Confirm Password', with: 'Password1')
   click_button('Sign up') 
   click_link 'Become a Host'
-  save_and_open_page
   
   within("#room-block-1") do
     select('Apartment')
@@ -92,7 +92,6 @@ def edit_room
   fill_in('Confirm Password', with: 'Password1')
   click_button('Sign up') 
   click_link 'Become a Host'
-  save_and_open_page
   
   within("#room-block-1") do
     select('Apartment')
