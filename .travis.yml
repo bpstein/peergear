@@ -1,8 +1,6 @@
-rvm: '2.2.3'
+language: ruby
 
-script:
-  - export RAILS_ENV=test
-  - bundle exec rake rspec
+rvm: '2.2.3'
 
 before_install:
 - sed -i '2d' Gemfile
@@ -12,4 +10,6 @@ before_install:
 before_script:
   - psql -c 'create database peer;' -U postgres
 
-
+script:
+  - export RAILS_ENV=test
+  - bundle exec rake rspec
