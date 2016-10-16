@@ -36,7 +36,6 @@ group :development, :test do
   gem 'capybara'
   gem 'coveralls', require: false
   gem 'poltergeist'
-  gem 'selenium-phantomjs'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
   gem 'shoulda-matchers', '~> 3.1'

@@ -286,8 +286,6 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
-    selenium-phantomjs (0.0.3)
-      selenium-webdriver
     selenium-webdriver (2.35.1)
       childprocess (>= 0.2.5)
       multi_json (~> 1.0)
@@ -392,7 +390,6 @@ DEPENDENCIES
   rubyzip (~> 0.9.9)
   s3_direct_upload
   sass-rails (~> 5.0)
-  selenium-phantomjs
   selenium-webdriver
   sendgrid-rails (~> 2.0, >= 2.0.5)
   shoulda-matchers (~> 3.1)
