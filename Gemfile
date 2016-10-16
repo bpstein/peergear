@@ -5,7 +5,6 @@ gem 'pg', group: :production
 gem 'rails_12factor', group: :production
 gem 'puma', '~> 3.0'
 gem 'figaro'
-
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -19,14 +18,12 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-linkedin'
-gem 'toastr-rails'
 gem 'paperclip'
 gem 'geocoder'
 gem 'toastr-rails'
 gem 'responders',          github: 'plataformatec/responders'
 gem 'inherited_resources', github: 'josevalim/inherited_resources'
 gem 'ransack',             github: 'ernie/ransack'
-gem 'omniauth'
 gem 'sendgrid-rails', '~> 2.0', '>= 2.0.5' 
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'rubyzip',  '~> 0.9.9'
@@ -35,13 +32,6 @@ gem 'aws-sdk'
 gem 's3_direct_upload'
 
 group :development, :test do
-  gem 'byebug', platform: :mri
-  gem 'factory_girl_rails'
-  gem 'ffaker'
-  gem 'sqlite3'
-end
-
-group :test do
   gem 'byebug', platform: :mri
   gem 'factory_girl_rails'
   gem 'ffaker'
@@ -60,10 +50,6 @@ group :test do
   gem 'dotenv-rails'
   gem 'stripe-ruby-mock'
   gem 'rspec-rails'
-  gem 'capybara'
-  gem 'coveralls', require: false
-  gem 'selenium-webdriver'
-  gem 'database_cleaner'
 end
 
 group :development do

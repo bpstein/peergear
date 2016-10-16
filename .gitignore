@@ -15,3 +15,12 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# Ignore application configuration
+/config/application.yml
+
+# Ignore test coverage
+/coverage/
+
+# Ignore node modules
+/node_modules/

@@ -1,24 +1,32 @@
 require 'rails_helper'
 require 'database_cleaner'
 
-# feature 'rooms' do
-#   context 'no rooms have been added' do
-#     scenario 'should display a prompt to add a room' do
-#       visit '/rooms'
-#       expect(page).to have_content 'No rooms yet!'
-#       expect(page).to have_link 'Add a room now!'
-#     end
-#   end
-# end
+feature 'rooms' do
+  before do 
+    DatabaseCleaner.clean
+  end
+
+  context 'no rooms have been added' do
+    scenario 'should display a prompt to add a room' do
+      # visit '/rooms'
+      # expect(page).to have_content 'No rooms yet!'
+      # expect(page).to have_link 'Add a room now!'
+    end
+  end
+end
 
 feature 'Creating new rooms' do 
-  # context 'user can add a new room' do 
-  #   it 'should display a new room once a new room is submitted' do
-  #     add_room
-  #     expect(current_path).to eq('/rooms')
-  #     expect(page).to have_css("img[src*='Tokyo.jpg']")
-  #   end
-  # end
+  before do 
+    DatabaseCleaner.clean
+  end
+  
+  context 'user can add a new room' do 
+    # it 'should display a new room once a new room is submitted' do
+    #   add_room
+    #   visit '/rooms/1'
+    #   expect(page).to have_content('Nice Penthouse')
+    # end
+  end
 
   # context 'user can edit existing rooms' do 
   #   it 'should update the content of a room once edit form is submitted' do 
