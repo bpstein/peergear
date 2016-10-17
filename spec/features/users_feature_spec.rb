@@ -17,6 +17,13 @@ feature "User can sign in and sign out" do
       visit('/')
       expect(page.find('#navbar')).not_to have_link('Log Out')
     end
+
+    it "should prompt login when accessing restricted link" do
+      visit('/')
+      click_link('Become a Host') 
+      expect(page).to have_content('Log In')
+      # expect(page).to have_content('You need to sign in or sign up before continuing.')
+    end
   end
 
   context "User signed in" do 

@@ -4,32 +4,39 @@ def sign_up
   visit('/')
   click_link('Sign Up')
   fill_in('Full Name', with: 'John Smith')
-  fill_in('Email', with: 'user@test.com')
-  fill_in('Password', with: 'Password1')
-  fill_in('Confirm Password', with: 'Password1')
+  fill_in('Email', with: 'johnsmith@email.com')
+  fill_in('Password', with: 'Password')
+  fill_in('Confirm Password', with: 'Password')
   click_button('Sign up') 
 end
 
 def sign_up_again
   visit('/')
   click_link('Sign Up')
-  fill_in('Full Name', with: 'Paul Jones')
-  fill_in('Email', with: 'user@example4.com')
-  fill_in('Password', with: 'Password1')
-  fill_in('Confirm Password', with: 'Password1')
+  fill_in('Full Name', with: 'Jane Jones')
+  fill_in('Email', with: 'janejones@email.com')
+  fill_in('Password', with: 'Password')
+  fill_in('Confirm Password', with: 'Password')
   click_button('Sign up')
 end
 
 def log_in
   visit('/')
   click_link('Log In')
-  fill_in('Email', with: 'user@example7.com')
-  fill_in('Password', with: 'Password1')
+  fill_in('Email', with: 'johnsmith@email.com')
+  fill_in('Password', with: 'Password')
+  click_button('Log In')
+end
+
+def log_in_again
+  visit('/')
+  click_link('Log In')
+  fill_in('Email', with: 'janejones@email.com')
+  fill_in('Password', with: 'Password')
   click_button('Log In')
 end
 
 def add_room
-  DatabaseCleaner.clean
   visit('/')
   click_link('Sign Up')
   fill_in('Full Name', with: 'John Smith')

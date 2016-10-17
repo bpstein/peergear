@@ -8,6 +8,7 @@ class RoomsController < ApplicationController
 
   def show
     @photos = @room.photos
+    @booked = Reservation.where("room_id = ? AND user_id = ?", @room.id, current_user.id).present? if current_user
   end
 
   def new
@@ -26,7 +27,7 @@ class RoomsController < ApplicationController
       end
 
       @photos = @room.photos
-      redirect_to edit_room_path(@room), notice: "Saved..."
+      redirect_to root_path, notice: "Listing saved!"
     else
       render :new
     end
@@ -36,7 +37,7 @@ class RoomsController < ApplicationController
     if current_user.id == @room.user.id
       @photos = @room.photos
     else
-      redirect_to root_path, notice: "You don't have permission."
+      redirect_to root_path, notice: "You don't have permission for this."
     end
   end
 
@@ -49,7 +50,7 @@ class RoomsController < ApplicationController
         end
       end
 
-      redirect_to edit_room_path(@room), notice: "Updated..."
+      redirect_to root_path, notice: "Listing updated!"
     else
       render :edit
     end

@@ -1,31 +1,44 @@
 require 'rails_helper'
 require 'database_cleaner'
 
-feature 'rooms' do
-  before do 
-    DatabaseCleaner.clean
-  end
+feature 'Creating new rooms' do 
+  let(:room) { FactoryGirl.create :room } 
+  let(:user) { FactoryGirl.create :user }
 
-  context 'no rooms have been added' do
-    scenario 'should display a prompt to add a room' do
-      # visit '/rooms'
-      # expect(page).to have_content 'No rooms yet!'
-      # expect(page).to have_link 'Add a room now!'
+  context 'No rooms exist yet' do  
+    it 'indicates there are no rooms' do 
+      visit '/'
+      expect(page).to have_content('No rooms yet!')
+      expect(page).not_to have_content('Nice Penthouse')
     end
   end
-end
-
-feature 'Creating new rooms' do 
-  before do 
-    DatabaseCleaner.clean
-  end
   
-  context 'user can add a new room' do 
-    # it 'should display a new room once a new room is submitted' do
-    #   add_room
-    #   visit '/rooms/1'
-    #   expect(page).to have_content('Nice Penthouse')
-    # end
+  context 'Rooms exist' do 
+    before do 
+      DatabaseCleaner.clean
+      user = User.create! fullname: 'John Smith', email: 'johnsmith@email.com', password: 'Password', password_confirmation: 'Password'
+      room = Room.create! id: 1, home_type: "apartment", room_type: "private", accommodate: "3", bed_room: "3", bath_room: "2", listing_name: "Nice Penthouse", summary: "Come stay at my place", address: "123 Example Street", price: 400, user: user
+    end
+    
+    it 'adds a new room' do  
+      add_room
+      visit '/'
+      expect(page).to have_content('Nice Penthouse')
+    end
+
+    it "adds a room to the landlord's listings" do 
+      visit '/rooms'
+      log_in
+      expect(page).to have_content('Your Listings')
+      expect(page).to have_content('Nice Penthouse')
+    end
+
+    it 'edits a room' do 
+      visit '/rooms/1/'
+      # expect(page).to have_content('Create your beautiful place')
+      # expect(page).to have_content('Listing Name')
+      # fill_in('Nice Penthouse', with: 'Big City House')
+    end
   end
 
   # context 'user can edit existing rooms' do 

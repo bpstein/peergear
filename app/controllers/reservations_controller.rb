@@ -38,34 +38,34 @@ class ReservationsController < ApplicationController
 
     #   redirect_to "https://www.sandbox.paypal.com/cgi-bin/webscr?" + values.to_query
     # else
-      redirect_to @reservation.room, alert: "Oops, something went wrong..."
+    #   redirect_to @reservation.room, alert: "Oops, something went wrong..."
     # end 
   end
 
-  # protect_from_forgery except: [:notify]
-  # def notify
-  #   params.permit!
-  #   status = params[:payment_status]
+  protect_from_forgery except: [:notify]
+  def notify
+    params.permit!
+    status = params[:payment_status]
 
-  #   reservation = Reservation.find(params[:item_number])
+    reservation = Reservation.find(params[:item_number])
 
-  #   if status = "Completed"
-  #     reservation.update_attributes status: true
-  #   else
-  #     reservation.destroy
-  #   end
+    if status = "Completed"
+      reservation.update_attributes status: true
+    else
+      reservation.destroy
+    end
 
-  #   render nothing: true
-  # end
+    render nothing: true
+  end
 
-  # protect_from_forgery except: [:your_trips]
-  # def your_trips
-  #   @trips = current_user.reservations.where("status = ?", true)
-  # end
+  protect_from_forgery except: [:your_trips]
+  def your_trips
+    @trips = current_user.reservations.where("status = ?", true)
+  end
 
-  # def your_reservations
-  #   @rooms = current_user.rooms
-  # end
+  def your_reservations
+    @rooms = current_user.rooms
+  end
 
   private
 

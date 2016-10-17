@@ -10,9 +10,10 @@ RSpec.describe RoomsController, :type => :controller do
   end
 
   describe "GET #index" do
-    it "returns http success" do 
+    it "returns http success" do
+      sign_in FactoryGirl.create(:user)
       get :index
-      expect(response).to have_http_status(302)
+      expect(response).to have_http_status(200)
     end
   end
 
