@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '>= 5.0.0.rc1', '< 5.1'
-gem 'pg', group: :production
+gem 'pg', '~> 0.18' 
 gem 'rails_12factor', group: :production
 gem 'puma', '~> 3.0'
 gem 'figaro'
@@ -32,7 +32,6 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'factory_girl_rails'
   gem 'ffaker'
-  gem 'sqlite3'
   gem 'capybara'
   gem 'coveralls', require: false
   gem 'poltergeist'
