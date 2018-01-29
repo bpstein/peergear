@@ -2,8 +2,8 @@ require "rails_helper"
 
 RSpec.describe PagesController, :type => :controller do
 
-  let(:room) { FactoryGirl.create :room }
-  let(:user) { FactoryGirl.create :user }
+  let(:room) { FactoryBot.create :room }
+  let(:user) { FactoryBot.create :user }
   
   before(:each) do
     DatabaseCleaner.clean 

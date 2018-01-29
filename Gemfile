@@ -27,10 +27,11 @@ gem 'rubyzip',  '~> 0.9.9'
 gem 'jquery-slick-rails'
 gem 'aws-sdk'
 gem 's3_direct_upload'
+gem 'aws-partitions'
 
 group :development, :test do
   gem 'byebug', platform: :mri
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'ffaker'
   gem 'capybara'
   gem 'coveralls', require: false

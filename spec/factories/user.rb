@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   providers = ["Facebook", "Google"]
   factory :user do
     email { FFaker::Internet.email }

@@ -2,8 +2,8 @@ require "rails_helper"
 
 RSpec.describe RoomsController, :type => :controller do
 
-  let(:room) { FactoryGirl.create :room }
-  let(:user) { FactoryGirl.create :user }
+  let(:room) { FactoryBot.create :room }
+  let(:user) { FactoryBot.create :user }
   
   before(:each) do
     DatabaseCleaner.clean 
@@ -11,7 +11,7 @@ RSpec.describe RoomsController, :type => :controller do
 
   describe "GET #index" do
     it "returns http success" do
-      sign_in FactoryGirl.create(:user)
+      sign_in FactoryBot.create(:user)
       get :index
       expect(response).to have_http_status(200)
     end
@@ -27,7 +27,7 @@ RSpec.describe RoomsController, :type => :controller do
 
   # describe "GET index" do
   #   it "populates with a list of rooms" do
-  #     @user = FactoryGirl.build(:user)
+  #     @user = FactoryBot.build(:user)
   #     get :index
   #     expect(:room).to eq([room])
   #   end

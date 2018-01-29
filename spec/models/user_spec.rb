@@ -3,16 +3,16 @@ require 'rails_helper'
 
 describe User do
   before :each do
-    @user = FactoryGirl.build(:user)
+    @user = FactoryBot.build(:user)
   end
-  # let(:facebook_user) { FactoryGirl.create :user}
-  let(:user) { FactoryGirl.create :user}
+  # let(:facebook_user) { FactoryBot.create :user}
+  let(:user) { FactoryBot.create :user}
 
   it { should have_many(:rooms) }
   it { should validate_presence_of(:fullname) }
 
   it 'creates new user using conventional signup' do
-    expect{ FactoryGirl.create(:user) }.to change{ User.count }.by(1)
+    expect{ FactoryBot.create(:user) }.to change{ User.count }.by(1)
   end
 
   # it 'creates user from omniauth callback' do

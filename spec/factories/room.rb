@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :room do 
     id 1
     home_type "apartment"
