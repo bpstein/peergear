@@ -80,6 +80,19 @@
         null,
         null
       ],
+      "/Users/benstein/Desktop/Git/peergear/app/controllers/photos_controller.rb": [
+        1,
+        1,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null
+      ],
       "/Users/benstein/Desktop/Git/peergear/app/controllers/rooms_controller.rb": [
         1,
         1,
@@ -304,21 +317,8 @@
         0,
         null,
         null
-      ],
-      "/Users/benstein/Desktop/Git/peergear/app/controllers/photos_controller.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
       ]
     },
-    "timestamp": 1517657393
+    "timestamp": 1517664714
   }
 }
