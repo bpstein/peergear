@@ -23,8 +23,9 @@ Things you may want to cover:
 
 * ... -->
 
-
-[![Build Status](https://travis-ci.org/bpstein/peergear.svg?branch=master)](https://travis-ci.org/bpstein/peergear) [![Coverage Status](https://coveralls.io/repos/github/bpstein/peergear/badge.svg?branch=master)](https://coveralls.io/github/bpstein/peergear?branch=master) [![Code Climate](https://codeclimate.com/github/bpstein/peergear/badges/gpa.svg)](https://codeclimate.com/github/bpstein/peergear)
+[![Build Status](https://travis-ci.org/bpstein/peergear.svg?branch=master)](https://travis-ci.org/bpstein/peergear)
+[![Coverage Status](https://coveralls.io/repos/github/bpstein/peergear/badge.svg?branch=master)](https://coveralls.io/github/bpstein/peergear?branch=master) 
+[![Code Climate](https://codeclimate.com/github/bpstein/peergear/badges/gpa.svg)](https://codeclimate.com/github/bpstein/peergear)
 
 # PeerGear
 
@@ -32,7 +33,7 @@ Things you may want to cover:
 Work in progress 
 
 ## Deployed project
-Project has been [deployed on Heroku](https://...)
+Project has been [deployed on Heroku](http://bs-peergear.herokuapp.com/)
 
 ## Technologies
 This project utilises the following technologies:
