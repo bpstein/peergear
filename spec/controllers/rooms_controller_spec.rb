@@ -21,7 +21,7 @@ RSpec.describe RoomsController, :type => :controller do
     it "returns http success" do 
       user = User.create! email: "testuser@test.com", fullname: "John Smith", password: "123456", password_confirmation: "123456"
       room = Room.create! home_type: 'apartment', room_type: "private", accommodate: "3", bed_room: "3", bath_room: "2", listing_name: "Nice Penthouse", summary: "Come stay at my place", address: "123 Example Street", price: 400, user: user
-      get :room, params: { id: 1 }
+      get :show, params: { id: room.id }
       expect(assigns(:room)).to eq room
     end
   end
@@ -29,9 +29,9 @@ RSpec.describe RoomsController, :type => :controller do
   describe "GET index" do
     it "populates with a list of rooms" do
       user = User.create! email: "testuser@test.com", fullname: "John Smith", password: "123456", password_confirmation: "123456"
-      @room = Room.create! home_type: 'apartment', room_type: "private", accommodate: "3", bed_room: "3", bath_room: "2", listing_name: "Nice Penthouse", summary: "Come stay at my place", address: "123 Example Street", price: 400, user: user
+      room = Room.create! home_type: 'apartment', room_type: "private", accommodate: "3", bed_room: "3", bath_room: "2", listing_name: "Nice Penthouse", summary: "Come stay at my place", address: "123 Example Street", price: 400, user: user
       get :index
-      expect(:room).to eq @room
+      expect(user.rooms).to include(room)
     end
   end
 end
