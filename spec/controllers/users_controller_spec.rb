@@ -1,21 +1,24 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, :type => :controller do
-  # context 'when password is invalid' do 
-  #   user = create(:user)
-  #   post :create, session: { email: user.email, password: 'invalid' }
-  #   expect(response).to render_template(:new)
-  #   expect(flash[:notice]).to match(/^Email and password do not match/)
-  # end
+  let(:user) { create :user }
 
-  # context 'when password is valid' do
-  #   it 'sets the user in the session and redirects them to their dashboard' do
-  #     user = create(:user)
+  before do
+    sign_up
+  end
 
-  #     post :create, session: { email: user.email, password: user.password }
+  feature 'User sign up' do 
+    scenario 'User can sign up' do 
+      expect(response).to have_http_status(:success)
+    end
+  end
 
-  #     expect(response).to redirect_to '/dashboard'
-  #     expect(controller.current_user).to eq user
-  #   end
-  # end
+  feature 'User is created' do 
+    scenario 'User can be created' do 
+      expect do 
+        post :create, user: Factory.attribute_for(:user)
+        response.should redirect_to root_url
+      end
+    end
+  end
 end

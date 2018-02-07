@@ -10,9 +10,20 @@ describe User do
 
   it { should have_many(:rooms) }
   it { should validate_presence_of(:fullname) }
+  it { should validate_presence_of(:email) }
+  it { should validate_presence_of(:password) }
 
   it 'creates new user using conventional signup' do
     expect{ FactoryBot.create(:user) }.to change{ User.count }.by(1)
+  end
+
+  it 'does not create user when password mismatches confirmation' do 
+    # user = FactoryBot.create(:user, password: 'password' password_confirmation: 'mismatch')
+
+    # expect(user).to_not be_valid
+    # expect(user.errors.first).to match(
+    #   [:password_confirmation, "doesn't match Password"]
+    # )
   end
 
   # it 'creates user from omniauth callback' do
