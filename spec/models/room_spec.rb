@@ -21,5 +21,9 @@ describe Room do
   it 'creates a new room' do
     expect{ FactoryBot.create(:room, user: user) }.to change{ Room.count }.by(1)
   end
+
+  #  it 'returns average rating' do
+  #   expect(subject.average_rating).to be_zero
+  # end
 end
 
